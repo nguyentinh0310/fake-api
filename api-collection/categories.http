@@ -1,0 +1,32 @@
+# categories
+
+@DOMAIN = http://localhost:5000/api
+
+# @name getAllCategory
+GET  {{DOMAIN}}/categories
+
+### 
+
+
+# @name createCategory
+POST {{DOMAIN}}/categories
+Content-Type: application/json
+
+{
+    "name" : "Quần áo"
+}
+
+### 
+
+# @name updateCategory
+PATCH  {{DOMAIN}}/categories
+Content-Type: application/json
+{
+    "name" : "Latop"
+}
+
+### 
+
+
+# @name deleteCategory
+DELETE  {{DOMAIN}}/categories/3

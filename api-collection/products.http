@@ -1,0 +1,64 @@
+# products
+
+@DOMAIN = http://localhost:5000/api
+
+# @name getAll
+GET  {{DOMAIN}}/products
+
+### 
+
+
+# @name filterProducts
+GET {{DOMAIN}}/products?price_gte=500
+
+###
+
+# @name search
+GET {{DOMAIN}}/products?name_like=chicken
+
+
+###
+
+# @name pagination
+GET {{DOMAIN}}/products?_page=1&_limit=10
+
+###
+
+# @name sort
+GET {{DOMAIN}}/products?_sort=price&_order=desc
+
+
+###
+
+
+# @name create
+POST {{DOMAIN}}/products
+Content-Type: application/json
+
+{
+    "categoryId": "3742e4d3-401e-417c-8589-866718daeb5d",
+    "name": "Intelligent Cotton Chair",
+    "color": "ivory",
+    "image": "http://placeimg.com/400/400",
+    "description": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "price": 400
+}
+
+### 
+
+
+# @name update
+PATCH  {{DOMAIN}}/products/RP6-HpK
+Content-Type: application/json
+
+{
+    "name": "Intelligent Cotton Chair Updated",
+    "color": "red",
+    "price": 450
+}
+
+### 
+
+
+# @name delete
+DELETE  {{DOMAIN}}/products/3
